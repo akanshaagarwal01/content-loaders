@@ -1,0 +1,181 @@
+#loader_container {
+    width:100%;
+    height:100%;
+    margin:auto;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding:100px;
+    box-sizing: border-box;
+}
+
+.loader {
+    padding:80px;
+    box-sizing: border-box;
+}
+
+#loader_single {
+    border-radius:50%;
+    border :5px solid rgba(4, 72, 160, 0.3);
+    border-top: 5px solid rgba(4, 72, 160, 1);
+    width:50px;
+    height:50px;
+    background-color: #ffffff;
+    animation-name: load_single;
+    animation-duration: 1.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+@keyframes load_single {
+    from{transform: rotate(0deg);}
+    to{transform: rotate(360deg);}
+}
+
+#loader_double {
+    border-radius:50%;
+    border :5px solid;
+    border-color: rgba(4, 72, 160, 1) rgba(4, 72, 160, 0.3);
+    width:50px;
+    height:50px;
+    background-color: #ffffff;
+    animation-name: load_double;
+    animation-duration: 1.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+@keyframes load_double {
+    from{transform: rotate(0deg);}
+    to{transform: rotate(360deg);}
+}
+
+#loader_grow {
+    border-radius:50%;
+    border :5px solid;
+    border-color: rgba(4, 72, 160, 1) rgba(4, 72, 160, 0.3);
+    width:50px;
+    height:50px;
+    background-color: #ffffff;
+    animation-name: load_grow;
+    animation-duration: 1.5s;
+    animation-timing-function: cubic-bezier(0,0,0.3, 1);
+    animation-iteration-count: infinite;
+}
+
+@keyframes load_grow {
+    from{width:50px;height:50px;transform: rotate(0deg);}
+    to{width:70px;height:70px;transform: rotate(360deg);}
+}
+
+#loader_2_balls {
+    border-radius:50%;
+    width:50px;
+    height:50px;
+    position: relative;
+    background-color:rgba(4, 72, 160, 0.1);
+    animation-name: load_2_balls;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+@keyframes load_2_balls {
+    from{transform: rotate(0deg);}
+    to{transform: rotate(360deg);}
+}
+
+#slow_ball {
+    border-radius:50%;
+    width:8px;
+    height:8px;
+    background-color:rgba(4, 72, 160, 1);
+    position:absolute;
+    animation-name: slow_ball;
+    animation-duration: 0.7s;
+    animation-timing-function: cubic-bezier(0,0,0.3, 1);
+    animation-iteration-count: infinite;
+}
+
+@keyframes slow_ball {
+    from{transform: rotate(0deg);top:20px;left:30px;}
+    to{transform: rotate(360deg);top:30px;left:40px;}
+}
+
+#fast_ball {
+    border-radius:50%;
+    width:8px;
+    height:8px;
+    background-color:rgba(4, 72, 160, 1);
+    position:absolute;
+    animation-name: fast_ball;
+    animation-duration: 0.5s;
+    animation-timing-function: cubic-bezier(0,0,0.3, 1);
+    animation-iteration-count: infinite;
+}
+
+@keyframes fast_ball {
+    from{transform: rotate(0deg);top:20px;left:-10px;}
+    to{transform: rotate(360deg);top:10px;left:-20px;}
+}
+
+#loader_clock {
+    border-radius:50%;
+    border:1px solid rgba(4, 72, 160, 0.3);
+    width:50px;
+    height:50px;
+    background-color:rgba(4, 72, 160, 0.1);
+    animation-name: load_clock;
+    animation-duration: 1.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    position: relative;
+}
+
+#hand {
+    background-color:  rgba(4, 72, 160, 1);
+    position:absolute;
+    width:30px;
+    height:2px;
+    left:-5px;
+    top:25px;
+}
+
+@keyframes load_clock {
+    from{transform: rotate(0deg);}
+    to{transform: rotate(360deg);}
+}
+
+#loader_spread {
+    border-radius:50%;
+    width:50px;
+    height:50px;
+    background-color:rgba(4, 72, 160);
+    animation-name: load_spread;
+    animation-duration: 1.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    position: relative;
+}
+
+@keyframes load_spread {
+    from{top:0px;left:0px;width:50px;height:50px;opacity:0.1;}
+    to{top:-22px;left:-22px;width:6px;height:6px;opacity:1;}
+}
+
+#loader_center {
+    border-radius:50%;
+    background-color:rgba(4, 72, 160);
+    animation-name: load_center;
+    animation-duration: 1.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    position: absolute;
+}
+
+@keyframes load_center {
+    from{top:22px;left:22px;width:6px;height:6px;opacity:1;}
+    to{top:0px;left:0px;width:50px;height:50px;opacity:0.1;}
+
+}
