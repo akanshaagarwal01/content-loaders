@@ -55,8 +55,8 @@
     border-radius:50%;
     border :5px solid;
     border-color: rgba(4, 72, 160, 1) rgba(4, 72, 160, 0.3);
-    width:50px;
-    height:50px;
+    width:30px;
+    height:30px;
     background-color: #ffffff;
     animation-name: load_grow;
     animation-duration: 1.5s;
@@ -65,8 +65,8 @@
 }
 
 @keyframes load_grow {
-    from{width:50px;height:50px;transform: rotate(0deg);}
-    to{width:70px;height:70px;transform: rotate(360deg);}
+    from{width:30px;height:30px;transform: rotate(0deg);}
+    to{width:50px;height:50px;transform: rotate(360deg);}
 }
 
 #loader_2_balls {
@@ -151,26 +151,22 @@
     border-radius:50%;
     width:50px;
     height:50px;
-    background-color:rgba(4, 72, 160);
+    background-color:rgba(4, 72, 160, 0.1);
     animation-name: load_spread;
-    animation-duration: 1.5s;
+    animation-duration: 0s;
     animation-timing-function: linear;
     animation-iteration-count: infinite;
     position: relative;
 }
 
-@keyframes load_spread {
-    from{top:0px;left:0px;width:50px;height:50px;opacity:0.1;}
-    to{top:-22px;left:-22px;width:6px;height:6px;opacity:1;}
-}
-
 #loader_center {
     border-radius:50%;
-    background-color:rgba(4, 72, 160);
+    background-color:rgb(4, 72, 160);
     animation-name: load_center;
     animation-duration: 1.5s;
     animation-timing-function: linear;
     animation-iteration-count: infinite;
+    animation-direction: alternate;
     position: absolute;
 }
 
@@ -178,4 +174,102 @@
     from{top:22px;left:22px;width:6px;height:6px;opacity:1;}
     to{top:0px;left:0px;width:50px;height:50px;opacity:0.1;}
 
+}
+
+#loader_center2 {
+    border-radius:50%;
+    background-color:rgb(4, 72, 160);
+    animation-name: load_center2;
+    animation-duration: 1.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    position: absolute;
+}
+
+@keyframes load_center2 {
+    from{top:13px;left:13px;width:24px;height:24px;opacity:0.1;}
+    to{top:0px;left:0px;width:50px;height:50px;opacity:1;}
+
+}
+
+#axis {
+    width:170px;
+    border-top: 2px dotted rgba(4, 72, 160,0.2);
+}
+
+#loader_pacman {
+    animation-name: load_pacman;
+    animation-duration: 8s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    position:relative;
+}
+
+@keyframes load_pacman {
+    0%
+    {margin-left: 0%}
+    50%
+    {margin-left: calc(100% + 15px)}
+    100% {
+        margin-right: 100%;
+    }
+  
+  0%, 49%
+    {transform: rotateY(0deg)}
+  50%, 100%
+    {transform: rotateY(180deg)}
+}
+
+#pacman_top {
+    width:0px;
+    height: 0px;
+    border:15px solid rgb(4, 72, 160);
+    border-right:15px solid transparent;
+    border-radius: 50%;
+    position: absolute;
+    top:-16px;
+    left:-16px;
+    animation-name: load_pacman_top;
+    animation-duration: 0.5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-direction: alternate;
+}
+
+@keyframes load_pacman_top {
+    from{transform: rotate(0deg);}
+    to{transform: rotate(45deg);}
+}
+
+#pacman_bottom {
+    width:0px;
+    height: 0px;
+    border:15px solid rgb(4, 72, 160);
+    border-right:15px solid transparent;
+    border-radius: 50%;
+    position: absolute;
+    top:-16px;
+    left:-16px;
+    animation-name: load_pacman_bottom;
+    animation-duration: 0.5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-direction: alternate;
+}
+
+@keyframes load_pacman_bottom {
+    from{transform: rotate(0deg);}
+    to{transform: rotate(-45deg);}
+}
+
+#eye {
+    width:5px;
+    height:5px;
+    border-radius: 50%;
+    background-color: yellow;
+    position: absolute;
+    top:-10px;
+    left:0px; 
+    z-index: 1000;
 }
